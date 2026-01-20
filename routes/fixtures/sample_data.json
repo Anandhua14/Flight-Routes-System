@@ -1,0 +1,84 @@
+[
+  {
+    "model": "routes.airport",
+    "pk": "JFK",
+    "fields": {
+      "name": "John F. Kennedy International Airport",
+      "position": 1
+    }
+  },
+  {
+    "model": "routes.airport",
+    "pk": "LAX",
+    "fields": {
+      "name": "Los Angeles International Airport",
+      "position": 2
+    }
+  },
+  {
+    "model": "routes.airport",
+    "pk": "ORD",
+    "fields": {
+      "name": "Chicago O'Hare International Airport",
+      "position": 3
+    }
+  },
+  {
+    "model": "routes.airport",
+    "pk": "DFW",
+    "fields": {
+      "name": "Dallas/Fort Worth International Airport",
+      "position": 4
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 1,
+    "fields": {
+      "source": "JFK",
+      "destination": "LAX",
+      "distance": 360,
+      "created_at": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 2,
+    "fields": {
+      "source": "LAX",
+      "destination": "ORD",
+      "distance": 240,
+      "created_at": "2024-01-01T11:00:00Z"
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 3,
+    "fields": {
+      "source": "ORD",
+      "destination": "DFW",
+      "distance": 180,
+      "created_at": "2024-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 4,
+    "fields": {
+      "source": "JFK",
+      "destination": "ORD",
+      "distance": 150,
+      "created_at": "2024-01-01T13:00:00Z"
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 5,
+    "fields": {
+      "source": "DFW",
+      "destination": "LAX",
+      "distance": 180,
+      "created_at": "2024-01-01T14:00:00Z"
+    }
+  }
+]

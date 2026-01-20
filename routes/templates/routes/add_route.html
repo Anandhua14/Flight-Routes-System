@@ -1,0 +1,80 @@
+{% extends 'routes/base.html' %}
+
+{% block title %}Add Route - Flight Routes System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">Add New Route</h2>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.source.id_for_label }}" class="form-label">
+                            {{ form.source.label }}
+                        </label>
+                        {{ form.source }}
+                        {% if form.source.help_text %}
+                            <small class="form-text text-muted">{{ form.source.help_text }}</small>
+                        {% endif %}
+                        {% if form.source.errors %}
+                            <div class="text-danger">{{ form.source.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.destination.id_for_label }}" class="form-label">
+                            {{ form.destination.label }}
+                        </label>
+                        {{ form.destination }}
+                        {% if form.destination.help_text %}
+                            <small class="form-text text-muted">{{ form.destination.help_text }}</small>
+                        {% endif %}
+                        {% if form.destination.errors %}
+                            <div class="text-danger">{{ form.destination.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.distance.id_for_label }}" class="form-label">
+                            {{ form.distance.label }}
+                        </label>
+                        {{ form.distance }}
+                        {% if form.distance.help_text %}
+                            <small class="form-text text-muted">{{ form.distance.help_text }}</small>
+                        {% endif %}
+                        {% if form.distance.errors %}
+                            <div class="text-danger">{{ form.distance.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+
+                    <button type="submit" class="btn btn-primary">Add Route</button>
+                    <a href="{% url 'routes:route_list' %}" class="btn btn-info">View All Routes</a>
+                    <a href="{% url 'routes:home' %}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Quick Link to View Routes -->
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Quick Actions</h5>
+                <p class="card-text">View and manage all added routes</p>
+                <a href="{% url 'routes:route_list' %}" class="btn btn-outline-primary">
+                    📋 View All Routes & Delete Options
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
