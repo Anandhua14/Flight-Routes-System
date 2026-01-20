@@ -1,0 +1,85 @@
+{% extends 'routes/base.html' %}
+
+{% block title %}Home - Flight Routes System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">Welcome to Flight Routes System</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">Manage and analyze flight routes between airports efficiently.</p>
+                
+                <!-- Statistics -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Airports</h5>
+                                <h2 class="card-text">{{ airport_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Routes</h5>
+                                <h2 class="card-text">{{ route_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h4>Quick Actions</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="mb-3">Management</h5>
+                                <div class="list-group">
+                                    <a href="{% url 'routes:add_airport' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">➕ Add New Airport</h6>
+                                        <p class="mb-1 small">Add a new airport to the system</p>
+                                    </a>
+                                    <a href="{% url 'routes:airport_list' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">📋 View All Airports</h6>
+                                        <p class="mb-1 small">View and manage all airports</p>
+                                    </a>
+                                    <a href="{% url 'routes:add_route' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">➕ Add New Route</h6>
+                                        <p class="mb-1 small">Add a new flight route between two airports</p>
+                                    </a>
+                                    <a href="{% url 'routes:route_list' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">📋 View All Routes</h6>
+                                        <p class="mb-1 small">View and manage all routes</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="mb-3">Analysis</h5>
+                                <div class="list-group">
+                                    <a href="{% url 'routes:nth_node' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">🔍 Find Nth Node</h6>
+                                        <p class="mb-1 small">Search for an airport N positions left or right from a starting airport</p>
+                                    </a>
+                                    <a href="{% url 'routes:longest_duration' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">⏱️ Longest Distance</h6>
+                                        <p class="mb-1 small">Find the airport with the route having the longest distance</p>
+                                    </a>
+                                    <a href="{% url 'routes:shortest_route' %}" class="list-group-item list-group-item-action">
+                                        <h6 class="mb-1">⚡ Shortest Route</h6>
+                                        <p class="mb-1 small">Find the shortest distance route between any two airports</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
